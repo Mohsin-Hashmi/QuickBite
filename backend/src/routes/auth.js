@@ -24,7 +24,7 @@ authRouter.post("/api/users/signup", async (req, res) => {
 
     await user.save();
     res.json({
-      message: "User sign up successfully",
+      message: "user sign up successfully",
     });
   } catch (err) {
     res.send("ERROR : " + err.message);
@@ -47,7 +47,7 @@ authRouter.post("/api/users/login", async (req, res) => {
     const user = await User.findOne({ emailId });
     if (!user) {
       return res.status(401).json({
-        message: "User not found",
+        message: "user not found",
       });
     }
 
@@ -70,6 +70,19 @@ authRouter.post("/api/users/login", async (req, res) => {
     });
 
   } catch (err) {
+    res.status(400).send(err.message);
+  }
+});
+
+authRouter.post('/api/users/logout', async(req,res)=>{
+  try{
+    res.cookie("token", null, {
+      expires: new Date(Date.now())
+    });
+    res.json({
+      message: "user logged out successfully"
+    })
+  }catch(err){
     res.status(400).send(err.message);
   }
 });
