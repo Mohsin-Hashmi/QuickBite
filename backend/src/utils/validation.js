@@ -1,18 +1,31 @@
-const Validator = require('validator');
-const validateSignUpUser= (req)=>{
+const Validator = require("validator");
+const validateSignUpUser = (req) => {
+  const { firstName, lastName, emailId, password } = req.body;
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!firstName || !lastName || !emailId || !password) {
+    throw new Error("All fields are required");
+  } else if (!Validator.isEmail(emailId)) {
+    throw new Error("Invalid email format");
+  } else if (password.length < 6) {
+    throw new Error("passowrd must be atleast six characters");
+  } else if (!Validator.isStrongPassword(password)) {
+    throw new Error("Password must be strong");
+  }
+};
+const validEditableFields = (req) => {
+  const editDataFields = [
+    "firstName",
+    "lastName",
+    "password",
+    "profilePicture",
+    "phoneNumber",
+    "bio",
+    "address",
+  ];
 
-    const{firstName, lastName, emailId, password}= req.body;
-    const emailRegex= /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if(!firstName|| !lastName || !emailId || !password){
-        throw new Error("All fields are required");
-    }
-    else if(!Validator.isEmail(emailId)){
-        throw new Error("Invalid email format");
-    }else if(password.length < 6){
-        throw new Error("passowrd must be atleast six characters");
-    }else if(!Validator.isStrongPassword(password)){
-        throw new Error("Password must be strong");
-    }
-}
-
-module.exports= validateSignUpUser;
+  const isEditAllowed = Object.keys(req.body).every((field) =>
+    editDataFields.includes(field)
+  );
+  return isEditAllowed;
+};
+module.exports = { validateSignUpUser, validEditableFields };
