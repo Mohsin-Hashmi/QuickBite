@@ -112,6 +112,6 @@ const restaurantSchema = new mongoose.Schema({
   },
 });
 
-const Restaruant = mongoose.model("Restaruant", restaurantSchema);
+const Restaurant = mongoose.model("Restaruant", restaurantSchema);
 const FoodItem = mongoose.model('FoodItem', foodItemSchema);
-module.exports = {Restaruant, FoodItem}
+module.exports = {Restaurant, FoodItem}

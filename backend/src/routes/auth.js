@@ -1,7 +1,7 @@
 const express = require("express");
 
 const authRouter = express.Router();
-const {validateSignUpUser} = require("../utils/validation");
+const { validateSignUpUser } = require("../utils/validation");
 const User = require("../models/user");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
@@ -23,7 +23,7 @@ authRouter.post("/api/users/signup", async (req, res) => {
     });
 
     await user.save();
-    res.json({
+    res.status(201).json({
       message: "user sign up successfully",
     });
   } catch (err) {
@@ -64,25 +64,29 @@ authRouter.post("/api/users/login", async (req, res) => {
       { expiresIn: "7d" }
     );
 
-    res.cookie("token", token);
+    res.cookie("token", token, { httpOnly: true });
     res.status(200).json({
-      message: "user logged in successfully", user
+      message: "user logged in successfully",
+      user: {
+        firstName: user.firstName,
+        lastName: user.lastName,
+        emailId: user.emailId,
+      },
     });
-
   } catch (err) {
     res.status(400).send(err.message);
   }
 });
 
-authRouter.post('/api/users/logout', async(req,res)=>{
-  try{
+authRouter.post("/api/users/logout", async (req, res) => {
+  try {
     res.cookie("token", null, {
-      expires: new Date(Date.now())
+      expires: new Date(Date.now()),
     });
     res.json({
-      message: "user logged out successfully"
-    })
-  }catch(err){
+      message: "user logged out successfully",
+    });
+  } catch (err) {
     res.status(400).send(err.message);
   }
 });
