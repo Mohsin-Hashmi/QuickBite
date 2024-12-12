@@ -39,7 +39,6 @@ restaurantRouter.post("/api/add/restaurants", userAuth, async (req, res) => {
     await restaurantInfo.save();
     res.status(200).json({ message: "Your restaurant register successfully" });
   } catch (err) {
-    console.log(err.message)
     res.status(500).json({ message: "Failed to register a restaurant" });
   }
 });
@@ -55,7 +54,7 @@ restaurantRouter.get("/api/view/restaurants", userAuth, async (req, res) => {
 });
 
 /**Get Restaurant by ID API */
-restaurantRouter.get('/api/restaurants/:id', userAuth, async(req,res)=>{
+restaurantRouter.get('/api/view/restaurants/:id', userAuth, async(req,res)=>{
   try{
     const loggedInUser= req.user;
     const restaurantId= req.params.id;
@@ -73,7 +72,26 @@ restaurantRouter.get('/api/restaurants/:id', userAuth, async(req,res)=>{
 
 
   }catch(err){
-    res.status(500).json({ message: "Error fetching restaurants", error });
+    res.status(500).json({ message: "Error fetching restaurant", error });
+  }
+})
+
+/**Delete Restaurant by ID API */
+restaurantRouter.delete('/api/delete/restaurants/:id',userAuth,async(req,res)=>{
+  try{
+    const loggedInUser= req.user;
+    const restaurantId= req.params.id;
+    if(!loggedInUser){
+      return res.status(400).json({message : "User not found"});
+    }
+    const restaurant= await Restaurant.findByIdAndDelete(restaurantId);
+    if(!restaurant){
+      return res.status(400).json({message: "Restaurnat not found"});
+    }
+    res.status(200).json({message: "Restaurant deleted successfully"});
+
+  }catch(err){
+    res.status(500).json({ message: "Error deleting restaurant", error })
   }
 })
 
