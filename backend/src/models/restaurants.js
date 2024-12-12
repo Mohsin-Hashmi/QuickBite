@@ -52,13 +52,13 @@ const restaurantSchema = new mongoose.Schema({
     maxLenght: 50,
     trim: true,
   },
-  email: {
+  emailId: {
     type: String,
     required: true,
     unique: true,
     lowercase: true,
     validate(value) {
-      if (!validator.isEmail(value)) {
+      if (!Validator.isEmail(value)) {
         throw new Error("Invalid email format");
       }
     },
@@ -66,10 +66,10 @@ const restaurantSchema = new mongoose.Schema({
   phoneNumber: {
     type: String,
     required: true,
-    validate: {
-      validator: (value) => /^\d{10}$/.test(value), // Assuming a 10-digit format
-      message: "Phone number must be 10 digits.",
-    },
+    // validate: {
+    //   validator: (value) => /^\d{10}$/.test(value), // Assuming a 10-digit format
+    //   message: "Phone number must be 10 digits.",
+    // },
   },
   description: {
     type: String,

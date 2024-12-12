@@ -28,4 +28,11 @@ const validEditableFields = (req) => {
   );
   return isEditAllowed;
 };
-module.exports = { validateSignUpUser, validEditableFields };
+
+const validRestaurantsFields = (req) => {
+  const { name, emailId, phoneNumber, address } = req.body;
+  if (!name || !emailId || !phoneNumber || !address) {
+    throw new Error("Missing required fields");
+  }
+};
+module.exports = { validateSignUpUser, validEditableFields, validRestaurantsFields };
