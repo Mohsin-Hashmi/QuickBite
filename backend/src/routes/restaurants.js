@@ -1,13 +1,14 @@
 const express = require("express");
 const restaurantRouter = express.Router();
 const userAuth = require("../middleware/auth");
+const isAdmin= require('../middleware/isAdmin');
 const {validRestaurantsFields}= require('../utils/validation');
 const { Restaurant } = require("../models/restaurants");
 
 
 const RESTAURANT_PUBLIC_DATA= "name phoneNumber description address openingHours menu rating reviews image"
 /**Register new Restaurant API */
-restaurantRouter.post("/api/add/restaurants", userAuth, async (req, res) => {
+restaurantRouter.post("/api/add/restaurants", userAuth, isAdmin,  async (req, res) => {
   try {
     const loggedInUser = req.user;
     if (!loggedInUser) {

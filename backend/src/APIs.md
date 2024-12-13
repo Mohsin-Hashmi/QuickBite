@@ -36,19 +36,19 @@ Why: To allow users to update their personal information.
 
 
 3. Restaurant APIs
--GET /api/restaurants
+-GET /api/restaurants(done)
 
 Description: Retrieve a list of all restaurants.
 Response: Array of restaurant objects.
 Why: To allow users to browse available restaurants.
 
--GET /api/restaurants/:id
+-GET /api/restaurants/:id(done)
 
 Description: Retrieve details of a specific restaurant.
 Response: Restaurant object with details (menu, ratings, etc.).
 Why: To allow users to view detailed information about a specific restaurant.
 
--POST /api/restaurants
+-POST /api/restaurants(done)
 
 Description: Add a new restaurant (admin only).
 Request Body: { name, location, menu, etc. }
@@ -62,7 +62,7 @@ Request Body: { name, location, menu, etc. }
 Response: Updated restaurant object or error message.
 Why: To allow admins to update existing restaurant information.
 
--DELETE /api/restaurants/:id
+-DELETE /api/restaurants/:id (done)
 
 Description: Remove a restaurant from the platform (admin only).
 Response: Success message or error message.

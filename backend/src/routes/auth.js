@@ -20,6 +20,7 @@ authRouter.post("/api/users/signup", async (req, res) => {
       lastName,
       emailId,
       password: HASHED_PASSWORD,
+      role: role || "user"
     });
 
     await user.save();
@@ -61,6 +62,7 @@ authRouter.post("/api/users/login", async (req, res) => {
     const token = await jwt.sign(
       { _id: user._id },
       process.env.SERVER_SECRET_CODE,
+      {role: user.role}, 
       { expiresIn: "7d" }
     );
 

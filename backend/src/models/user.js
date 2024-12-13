@@ -57,6 +57,11 @@ const userSchema= new mongoose.Schema({
         country: { type: String, default: '' },
         zipCode: { type: String, default: '' },
     },
+    role: {
+        type: String,
+        enum: ['admin', 'user'], // Define roles here
+        default: 'user', // Default role
+    },
 })
 
 /**Creating the model */
