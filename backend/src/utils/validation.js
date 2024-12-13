@@ -35,4 +35,27 @@ const validRestaurantsFields = (req) => {
     throw new Error("Missing required fields");
   }
 };
-module.exports = { validateSignUpUser, validEditableFields, validRestaurantsFields };
+
+const validRestaurantEditableFields = (req) => {
+  const editDataFeilds = [
+    "name",
+    "phoneNumber",
+    "description",
+    "address",
+    "openingHours",
+    "menu",
+    "rating",
+    "reviews",
+    "image",
+  ];
+  const isEditAllowed = Object.keys(req.body).every((field) =>
+    editDataFeilds.includes(field)
+  );
+  return isEditAllowed;
+};
+module.exports = {
+  validateSignUpUser,
+  validEditableFields,
+  validRestaurantsFields,
+  validRestaurantEditableFields
+};

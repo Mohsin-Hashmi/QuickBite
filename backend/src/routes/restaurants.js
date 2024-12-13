@@ -3,6 +3,7 @@ const restaurantRouter = express.Router();
 const userAuth = require("../middleware/auth");
 const isAdmin= require('../middleware/isAdmin');
 const {validRestaurantsFields}= require('../utils/validation');
+const {validRestaurantEditableFields}= require('../utils/validation');
 const { Restaurant } = require("../models/restaurants");
 
 
@@ -93,6 +94,28 @@ restaurantRouter.delete('/api/delete/restaurants/:id',userAuth,async(req,res)=>{
 
   }catch(err){
     res.status(500).json({ message: "Error deleting restaurant", error })
+  }
+})
+
+/**Upgrade Restaurant by ID API */
+restaurantRouter.patch('/api/update/restaurants/:id',userAuth, isAdmin, async(req,res)=>{
+  try{
+    
+    const restaurantId= req.params.id;
+    if(!validRestaurantEditableFields(req)){
+      return res.status(400).json({"message": "Invalid field to update"});
+    }
+    const restaurant = await Restaurant.findById(restaurantId);
+    if(!restaurant){
+      return res.status(404).json({ message: "Restaurant not found" });
+    }
+    Object.keys(req.body).forEach((row)=>restaurant[row]= req.body[row]);
+    await restaurant.save();
+    res.json({
+      message: `Restaurant information updated successfully.` ,data: restaurant,
+    });
+  }catch(err){
+    res.status(500).json({ message: "Error to update restaurant", error })
   }
 })
 
