@@ -10,7 +10,7 @@ const Validator = require("validator");
 /**Creating the signup API */
 authRouter.post("/api/users/signup", async (req, res) => {
   try {
-    const { firstName, lastName, emailId, password } = req.body;
+    const { firstName, lastName, emailId, password, role } = req.body;
     validateSignUpUser(req);
 
     const HASHED_PASSWORD = await bcrypt.hash(password, 10);
@@ -62,7 +62,7 @@ authRouter.post("/api/users/login", async (req, res) => {
     const token = await jwt.sign(
       { _id: user._id },
       process.env.SERVER_SECRET_CODE,
-      {role: user.role}, 
+      
       { expiresIn: "7d" }
     );
 
