@@ -75,18 +75,21 @@ GET /api/restaurants/:id/menu
 Description: Retrieve the menu for a specific restaurant.
 Response: Array of menu items.
 Why: To allow users to view available food items at a restaurant.
+
 POST /api/restaurants/:id/menu
 
 Description: Add a new menu item to a restaurant (admin only).
 Request Body: { name, description, price, etc. }
 Response: Success message or error message.
 Why: To allow admins to manage the menu items of a restaurant.
+
 PUT /api/restaurants/:id/menu/:itemId
 
 Description: Update a menu item (admin only).
 Request Body: { name, description, price, etc. }
 Response: Updated menu item or error message.
 Why: To allow admins to update existing menu items.
+
 DELETE /api/restaurants/:id/menu/:itemId
 
 Description: Remove a menu item from a restaurant (admin only).

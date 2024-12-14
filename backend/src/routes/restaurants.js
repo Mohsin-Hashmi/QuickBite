@@ -26,7 +26,8 @@ restaurantRouter.post("/api/add/restaurants", userAuth, isAdmin,  async (req, re
       rating,
       reviews,
     } = req.body;
-    validRestaurantsFields(req);
+    validRestaur
+    antsFields(req);
     const restaurantInfo = new Restaurant({
       name,
       emailId,
