@@ -32,7 +32,7 @@ const Login = () => {
 
   return (
     <>
-      <section className="signup">
+      <section className="login bg-Image">
         <div className="container">
           <div className="w-[390px] m-auto px-[39px] py-[45px] border border-[#808080]">
             <h1 className="text-[24px] text-center">Create an account</h1>
@@ -64,7 +64,7 @@ const Login = () => {
               </button>
               <p className="text-center">
                 Create an account?{" "}
-                <Link className="text-[#2F89FC]" to="/login">
+                <Link className="text-[#2F89FC]" to="/signup">
                   Signup
                 </Link>
               </p>
