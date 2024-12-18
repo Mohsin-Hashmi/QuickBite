@@ -6,14 +6,13 @@ const SignUp = () => {
   const [lastName, setLastName] = useState("");
   const [emailId, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [showPassword, setShowPassword]= useState("");
+  const [showPassword, setShowPassword] = useState("");
   const [role, setRole] = useState("");
   const navigate = useNavigate();
 
-
-  const handleShowPassword= ()=>{
-    setShowPassword((prev)=>!prev)
-  }
+  const handleShowPassword = () => {
+    setShowPassword((prev) => !prev);
+  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -47,7 +46,7 @@ const SignUp = () => {
               Create an account
             </h1>
             <p className="text-[14px] font-[700] text-center mt-[7px] text-gray-500">
-            Get Your Favorite Meals Delivered Fast!
+              Get Your Favorite Meals Delivered Fast!
             </p>
             <form className="mt-[36px] block" onSubmit={handleSubmit}>
               <input
@@ -98,8 +97,16 @@ const SignUp = () => {
                   Admin
                 </option>
               </select>
+              <div className="flex items-center gap-x-[5px]">
+                <input
+                  type="checkbox"
+                  className="relative left-0 top-1"
+                  checked={showPassword}
+                  onChange={handleShowPassword}
+                />
+                <p className="text-sm text-[#808080] mt-[8px]">show password</p>
+              </div>
 
-              <input type="checkbox" checked={showPassword} onChange={handleShowPassword}/>
               <button
                 type="submit"
                 className="w-full py-[12px] px-[123px] bg-[#0E64D2] text-[#FFFFFF] mt-[29px] mb-[32px] rounded-[5px] text-[16px] font-[500]"
