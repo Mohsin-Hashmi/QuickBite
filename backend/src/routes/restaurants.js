@@ -26,8 +26,7 @@ restaurantRouter.post("/api/add/restaurants", userAuth, isAdmin,  async (req, re
       rating,
       reviews,
     } = req.body;
-    validRestaur
-    antsFields(req);
+    validRestaurantsFields(req);
     const restaurantInfo = new Restaurant({
       name,
       emailId,
@@ -40,9 +39,11 @@ restaurantRouter.post("/api/add/restaurants", userAuth, isAdmin,  async (req, re
       reviews,
     });
     await restaurantInfo.save();
+    
     res.status(200).json({ message: "Your restaurant register successfully" });
   } catch (err) {
-    res.status(500).json({ message: "Failed to register a restaurant" });
+    console.error("Error:", err.message || err);
+    res.status(500).json({ message: "Failed to register a restaurant", error: err.message });
   }
 });
 
