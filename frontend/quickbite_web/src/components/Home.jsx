@@ -1,6 +1,7 @@
 import { BASE_URL } from "../../src/utils/constant";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Footer from "./Footer";
 const Home = () => {
   const [restaurants, setRestaurants] = useState([]);
   const [error, setError] = useState();
@@ -95,6 +96,7 @@ const Home = () => {
           </div>
         </div>
       </section>
+      <Footer/>
     </>
   );
 };

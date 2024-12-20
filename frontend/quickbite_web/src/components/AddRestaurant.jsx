@@ -1,4 +1,5 @@
 import Navbar from "./Navbar";
+import Footer from "./Footer";
 const AddRestaurant = () => {
   return (
     <>
@@ -72,6 +73,7 @@ const AddRestaurant = () => {
           </div>
         </div>
       </section>
+      <Footer/>
     </>
   );
 };
