@@ -12,7 +12,7 @@ const Navbar = () => {
         <div className="navbar">
           <div className="container">
             <nav className="flex items-center justify-between pt-[30px] font-[700]">
-              <Link to="">
+              <Link to="/home">
                 <img src={assets.logo} alt="logo" />
               </Link>
 
@@ -24,7 +24,7 @@ const Navbar = () => {
                   <Link to="/">Menu</Link>
                 </li>
                 <li>
-                  <Link to="/">Add Restaurant</Link>
+                  <Link to="/addrestaurant">Add Restaurant</Link>
                 </li>
                 <li>
                   <Link to="/">Our Policies</Link>
