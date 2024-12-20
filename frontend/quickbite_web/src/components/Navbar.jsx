@@ -10,7 +10,7 @@ const Navbar = () => {
     <>
       
         <div className="navbar">
-          <div className="container">
+          <div className="container ">
             <nav className="flex items-center justify-between pt-[30px] font-[700]">
               <Link to="/home">
                 <img src={assets.logo} alt="logo" />
