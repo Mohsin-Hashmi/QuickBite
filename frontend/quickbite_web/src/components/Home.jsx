@@ -30,9 +30,9 @@ const Home = () => {
   }, []);
   return (
     <>
-      <section>
+      <section className="relative pb-[100px]">
         <div className="container ">
-          <h1 className="pt-[300px] pb-[50px] text-center text-3xl">
+          <h1 className=" pb-[50px] text-center text-3xl">
             All Restaurant Menu
           </h1>
           <div className="cardContainer flex flex-wrap justify-between  gap-[30px] font-[700]">
@@ -44,7 +44,7 @@ const Home = () => {
                   restaurant; // Destructure the restaurant object
 
                 return (
-                  <Link key= {_id} to=" ">
+                  <Link key={_id} to=" ">
                     <div
                       key={_id}
                       className="restaurantCard border border-[#000000] p-[20px]"
@@ -96,7 +96,11 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <Footer/>
+      <section className="footer bg-[#D9D9D9]">
+        <div className="container">
+          <Footer />
+        </div>
+      </section>
     </>
   );
 };

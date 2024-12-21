@@ -6,7 +6,7 @@ const AddRestaurant = () => {
   return (
     <>
       <Navbar />
-      <section className="addRestaurent">
+      <section className="addRestaurent ">
         <div className="addRestaurentWrapper">
           <h1 className="text-center text-[40px] mt-[30px]">
             Add Your Restaurant

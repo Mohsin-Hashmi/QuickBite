@@ -1,13 +1,17 @@
 import PropTypes from 'prop-types'
 import Navbar from './Navbar'
-import Banner from './Banner'
+import Banner from './Banner';
 const Layout = ({children}) => {
   return (
+    <>
     <div className='home'>
         <Navbar/>
         <Banner/>
-        <main>{children}</main>
+        
     </div>
+    <main>{children}</main>
+    </>
+    
   )
 }
 
