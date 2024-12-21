@@ -1,11 +1,13 @@
-import Navbar from "./Navbar";
-import Footer from "./Footer";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import { Link } from "react-router-dom";
+
 const AddRestaurant = () => {
   return (
     <>
       <Navbar />
-      <section className="">
-        <div className="">
+      <section className="addRestaurent">
+        <div className="addRestaurentWrapper">
           <h1 className="text-center text-[40px] mt-[30px]">
             Add Your Restaurant
           </h1>
@@ -21,59 +23,75 @@ const AddRestaurant = () => {
                   placeholder="Enter Your Restaurant Name"
                   className="w-full border  border-[#000000] p-[10px] outline-none rounded-xl mb-[15px]"
                 />
-                <label className="mb-[10px]" htmlFor="restaurantName">
+                <label className="mb-[10px]" htmlFor="restaurantEmail">
                   Enter Your Restaurant Email:
                 </label>
                 <input
-                  id="restaurantName"
+                  id="restaurantEmail"
                   type="email"
                   placeholder="Enter Your Restaurant Email"
                   className="w-full border  border-[#000000] p-[10px] outline-none rounded-xl mb-[15px]"
                 />
-                <label className="mb-[10px]" htmlFor="restaurantName">
+                <label className="mb-[10px]" htmlFor="restaurantImage">
+                  Enter Your Restaurant Image:
+                </label>
+                <input
+                  id="restaurantImage"
+                  type="file"
+                  placeholder="Enter Your Restaurant Image"
+                  className="w-full border  border-[#000000] p-[10px] outline-none rounded-xl mb-[15px]"
+                />
+                <label className="mb-[10px]" htmlFor="restaurantPhoneNo">
                   Enter Your Restaurant Phone Number:
                 </label>
                 <input
-                  id="restaurantName"
+                  id="restaurantPhoneNo"
                   type="tel"
                   placeholder="Enter Your Restaurant Phone Number"
                   className="w-full border  border-[#000000] p-[10px] outline-none rounded-xl mb-[15px]"
                 />
-                <label className="mb-[10px]" htmlFor="restaurantName">
+                <label className="mb-[10px]" htmlFor="restaurantDescription">
                   Enter Your Restaurant Description:
                 </label>
                 <input
-                  id="restaurantName"
+                  id="restaurantDescription"
                   type="text"
                   placeholder="Enter Your Restaurant Description"
                   className="w-full border  border-[#000000] p-[10px] outline-none rounded-xl mb-[15px]"
                 />
-                <label className="mb-[10px]" htmlFor="restaurantName">
+                <label className="mb-[10px]" htmlFor="restaurantAddress">
                   Enter Your Restaurant Address:
                 </label>
                 <input
-                  id="restaurantName"
+                  id="restaurantAddress"
                   type="text"
                   placeholder="Enter Your Restaurant Address"
                   className="w-full border  border-[#000000] p-[10px] outline-none rounded-xl mb-[15px]"
                 />
-                <label className="mb-[10px]" htmlFor="restaurantName">
+                <label className="mb-[10px]" htmlFor="restaurantOpeningHours">
                   Enter Your Restaurant Opening Hours:
                 </label>
                 <input
-                  id="restaurantName"
+                  id="restaurantOpeningHours"
                   type="time"
                   placeholder="Enter Your Restaurant Hours"
                   className="w-full border  border-[#000000] p-[10px] outline-none rounded-xl mb-[15px]"
                 />
-                <button className="bg-[#FFA500] p-[15px] text-[#fff] rounded-3xl font-[700]">Enter Your Restaurant Menu</button>
-                <button className="bg-[#FFA500] p-[15px] text-[#fff] rounded-3xl font-[700] block">Submit</button>
               </div>
             </form>
+            <Link to="/addrestaurantmenu">
+              <button className="bg-[#FFA500] p-[15px] rounded-3xl font-[700] text-[15px] text-[#000]">
+                Enter Your Restaurant Menu
+              </button>
+            </Link>
+
+            <button className="w-[140px] bg-[#FFA500] p-[15px] rounded-3xl font-[700] block m-auto text-[#000]">
+              Submit
+            </button>
           </div>
         </div>
       </section>
-      <Footer/>
+      <Footer />
     </>
   );
 };
