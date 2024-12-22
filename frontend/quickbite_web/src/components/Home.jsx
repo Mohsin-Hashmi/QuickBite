@@ -2,6 +2,7 @@ import { BASE_URL } from "../../src/utils/constant";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Footer from "./Footer";
+import FooterButtom from "./FooterButtom";
 const Home = () => {
   const [restaurants, setRestaurants] = useState([]);
   const [error, setError] = useState();
@@ -99,6 +100,11 @@ const Home = () => {
       <section className="footer bg-[#D9D9D9]">
         <div className="container">
           <Footer />
+        </div>
+      </section>
+      <section className="bg-[#03081F] ">
+        <div className="container">
+          <FooterButtom/>
         </div>
       </section>
     </>

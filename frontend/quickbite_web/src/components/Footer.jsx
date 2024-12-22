@@ -53,7 +53,10 @@ const Footer = () => {
             <Link className="text-[15px] hover:underline underline-offset-4">Create a business account </Link>
           </div>
         </div>
+       
       </div>
+      
+      
     </>
   );
 };
