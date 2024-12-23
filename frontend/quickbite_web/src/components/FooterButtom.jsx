@@ -5,7 +5,7 @@ const FooterButtom = () => {
       <div className="pt-[29px] pb-[21px] flex justify-between items-center">
         <span>
           <h3 className="text-[#fff] text-[15px] font-[500]">
-            Order.uk Copyright 2024, All Rights Reserved.
+            Tomato Copyright 2024, All Rights Reserved.
           </h3>
         </span>
         <div className="flex items-center gap-x-[20px] justify-between">

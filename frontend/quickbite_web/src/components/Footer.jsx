@@ -11,7 +11,7 @@ const Footer = () => {
           </p>
         </div>
         <div>
-          <h4>Get Exclusive Deals in your Inbox</h4>
+          <h4 className="mb-[31px] text-[18px] font-[700]">Get Exclusive Deals in your Inbox</h4>
           <div className="bg-[#ffffff] rounded-[120px]">
             <input
               className="w-[300px] rounded-[120px] bg-[#ffffff] py-[18px] pl-[30px] outline-none"
@@ -40,17 +40,17 @@ const Footer = () => {
         <div className="flex">
           <div className="flex flex-col ">
             <h3 className="text-[18px] mb-[10px]">Legal Pages</h3>
-            <Link className="text-[15px] mb-[8px] hover:underline underline-offset-4">Terms and conditions</Link>
-            <Link className="text-[15px] mb-[8px] hover:underline underline-offset-4">Privacy</Link>
-            <Link className=" text-[15px] mb-[8px] hover:underline underline-offset-4">Cookies</Link>
-            <Link className="text-[15px] hover:underline underline-offset-4">Modern Slavery Statement </Link>
+            <Link className="text-[15px] mb-[8px] font-[500] hover:underline underline-offset-4">Terms and conditions</Link>
+            <Link className="text-[15px] mb-[8px] font-[500]  hover:underline underline-offset-4">Privacy</Link>
+            <Link className=" text-[15px] mb-[8px] font-[500]  hover:underline underline-offset-4">Cookies</Link>
+            <Link className="text-[15px] font-[500]  hover:underline underline-offset-4">Modern Slavery Statement </Link>
           </div>
           <div className="flex flex-col pl-[20px]">
             <h3 className="text-[18px] mb-[10px]">Important Links</h3>
-            <Link className="text-[15px] mb-[8px] hover:underline underline-offset-4">Get help</Link>
-            <Link className="text-[15px] mb-[8px] hover:underline underline-offset-4">Add your restaurant</Link>
-            <Link className="text-[15px] mb-[8px] hover:underline underline-offset-4">Sign up to deliver</Link>
-            <Link className="text-[15px] hover:underline underline-offset-4">Create a business account </Link>
+            <Link className="text-[15px] mb-[8px] font-[500]  hover:underline underline-offset-4">Get help</Link>
+            <Link className="text-[15px] mb-[8px]  font-[500]  hover:underline underline-offset-4">Add your restaurant</Link>
+            <Link className="text-[15px] mb-[8px] font-[500]  hover:underline underline-offset-4">Sign up to deliver</Link>
+            <Link className="text-[15px] font-[500]  hover:underline underline-offset-4">Create a business account </Link>
           </div>
         </div>
        

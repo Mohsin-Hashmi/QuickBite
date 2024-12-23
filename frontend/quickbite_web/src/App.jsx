@@ -6,7 +6,7 @@ import Login from "./components/Login";
 import Layout from "./components/Layout";
 import AddRestaurant from "./pages/AddRestaurant";
 import AddResturantMenu from "./pages/AddResturantMenu";
-
+import RestaurantDetails from "./components/RestaurantDetails";
 function App() {
   return (
     <BrowserRouter>
@@ -17,6 +17,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/addrestaurant" element= {<AddRestaurant/>}/>
         <Route path="/addrestaurantmenu" element= {<AddResturantMenu/>}/>
+        <Route path="/restaurant/:id" element={<RestaurantDetails/>}/>
       </Routes>
     </BrowserRouter>
   );

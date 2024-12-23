@@ -34,21 +34,21 @@ const Home = () => {
       <section className="relative pb-[100px]">
         <div className="container ">
           <h1 className=" pb-[50px] text-center text-3xl">
-            All Restaurant Menu
+            All Restaurant 
           </h1>
-          <div className="cardContainer flex flex-wrap justify-between  gap-[30px] font-[700]">
+          <div className="cardContainer flex flex-wrap justify-evenly  gap-[30px] font-[700]">
             {error && <p className="text-red-500">{error}</p>}{" "}
             {/* Display error if any */}
             {restaurants.length > 0 ? (
               restaurants.map((restaurant) => {
-                const { _id, name, description, address, menu, reviews } =
+                const { _id, name, description, address } =
                   restaurant; // Destructure the restaurant object
 
                 return (
-                  <Link key={_id} to=" ">
+                  <Link key={_id} to={`/restaurant/${_id}`}>
                     <div
                       key={_id}
-                      className="restaurantCard border border-[#000000] p-[20px]"
+                      className="restaurantCard border border-[#000000] p-[20px] rounded-3xl max-w-sm mx-auto  bg-white  shadow-lg"
                     >
                       <h2>{name}</h2>
                       <p>{description}</p>
@@ -57,36 +57,7 @@ const Home = () => {
                         {address?.state}, {address?.country}, {address?.zipCode}
                       </p>
                       <p>Opening Hours: {restaurant.openingHours}</p>
-                      <h3>Menu:</h3>
-                      <ul>
-                        {menu.map((category) => (
-                          <li key={category?._id}>
-                            <strong>{category?.categoryName}</strong>
-                            <ul>
-                              {category.items.map((item) => (
-                                <li key={item._id}>
-                                  {item.itemName} - ${item.price} <br />
-                                  <img
-                                    src={item.image}
-                                    alt={item.itemName}
-                                    style={{ width: "100px" }}
-                                  />
-                                </li> // Assuming each item has a 'name' property
-                              ))}
-                            </ul>
-                          </li>
-                        ))}
-                      </ul>
-                      <h3>Reviews:</h3>
-                      <ul>
-                        {reviews.map((review) => (
-                          <li key={review?._id}>
-                            <p>
-                              {review?.reviewText} - Rating: {review?.rating}
-                            </p>
-                          </li>
-                        ))}
-                      </ul>
+                      
                     </div>
                   </Link>
                 );

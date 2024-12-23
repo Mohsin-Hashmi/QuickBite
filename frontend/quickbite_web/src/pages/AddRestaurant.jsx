@@ -1,7 +1,7 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
-
+import FooterButtom from "../components/FooterButtom";
 const AddRestaurant = () => {
   return (
     <>
@@ -91,7 +91,16 @@ const AddRestaurant = () => {
           </div>
         </div>
       </section>
-      <Footer />
+      <section className="footer bg-[#D9D9D9]">
+        <div className="container">
+          <Footer />
+        </div>
+      </section>
+      <section className="bg-[#03081F] ">
+        <div className="container">
+          <FooterButtom/>
+        </div>
+      </section>
     </>
   );
 };
