@@ -7,8 +7,8 @@ const AddRestaurant = () => {
     <>
       <Navbar />
       <section className="addRestaurent ">
-        <div className="addRestaurentWrapper">
-          <h1 className="text-center text-[40px] mt-[30px]">
+        <div className="addRestaurentWrapper pt-[50px] pb-[50px]">
+          <h1 className="text-center text-[40px] ">
             Add Your Restaurant
           </h1>
           <div className="max-w-[900px] m-auto">
@@ -85,7 +85,7 @@ const AddRestaurant = () => {
               </button>
             </Link>
 
-            <button className="w-[140px] bg-[#FFA500] p-[15px] rounded-3xl font-[700] block m-auto text-[#000]">
+            <button className="w-[140px] bg-[#FFA500] p-[15px] rounded-3xl font-[700] block m-auto text-[#000] ">
               Submit
             </button>
           </div>

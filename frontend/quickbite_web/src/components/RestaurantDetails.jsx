@@ -44,6 +44,7 @@ const RestaurantDetails = () => {
 
   return (
     <div className="container mx-auto p-4">
+    
       <h1 className="text-3xl font-bold">{restaurant.name}</h1>
       <p className="mt-2">{restaurant.description}</p>
       <p className="mt-2">

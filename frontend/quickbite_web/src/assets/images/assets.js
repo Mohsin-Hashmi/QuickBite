@@ -63,7 +63,9 @@ import facebookLogo from "./facebooklogo.webp";
 import instragramLogo from "./InstagramLogo.webp";
 import tiktokLogo from "./tiktokLogo.webp";
 import snapChatLogo from "./snapchatLogo.webp"
-
+import locationLogo from "./locationLogo.webp";
+import phoneLogo from "./phoneLogo.webp";
+import emailLogo from "./emailLogo.webp";
 export const assets = {
     logo,
     basket_icon,
@@ -87,7 +89,10 @@ export const assets = {
     facebookLogo,
     instragramLogo,
     tiktokLogo,
-    snapChatLogo
+    snapChatLogo,
+    phoneLogo,
+    emailLogo,
+    locationLogo,
 }
 
 export const menu_list = [

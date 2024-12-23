@@ -33,31 +33,37 @@ const Home = () => {
     <>
       <section className="relative pb-[100px]">
         <div className="container ">
-          <h1 className=" pb-[50px] text-center text-3xl">
-            All Restaurant 
-          </h1>
+          <h1 className=" pb-[50px] text-center text-3xl">All Restaurant</h1>
           <div className="cardContainer flex flex-wrap justify-evenly  gap-[30px] font-[700]">
             {error && <p className="text-red-500">{error}</p>}{" "}
             {/* Display error if any */}
             {restaurants.length > 0 ? (
               restaurants.map((restaurant) => {
-                const { _id, name, description, address } =
-                  restaurant; // Destructure the restaurant object
+                const { _id, image, name, description, address } = restaurant; // Destructure the restaurant object
 
                 return (
                   <Link key={_id} to={`/restaurant/${_id}`}>
                     <div
                       key={_id}
-                      className="restaurantCard border border-[#000000] p-[20px] rounded-3xl max-w-sm mx-auto  bg-white  shadow-lg"
+                      className="restaurantCard border-2 hover:border-[#FFA500] p-[20px] rounded-3xl max-w-sm mx-auto  bg-white  shadow-lg"
                     >
-                      <h2>{name}</h2>
-                      <p>{description}</p>
-                      <p>
+                      <img
+                        className="w-full"
+                        src={image}
+                        alt="restaurnat image"
+                      />
+                      <h2 className="text-center text-[25px] font-[700] mt-[12px]">
+                        {name}
+                      </h2>
+                      <p className="font-[500] mt-[8px]">{description}</p>
+                      <p className="font-[500] mt-[8px]">
                         Address: {address?.street}, {address?.city},{" "}
                         {address?.state}, {address?.country}, {address?.zipCode}
                       </p>
-                      <p>Opening Hours: {restaurant.openingHours}</p>
-                      
+                      on
+                      <p className="font-[500] mt-[10px]">
+                        Opening Hours: {restaurant.openingHours}
+                      </p>
                     </div>
                   </Link>
                 );
@@ -75,7 +81,7 @@ const Home = () => {
       </section>
       <section className="bg-[#03081F] ">
         <div className="container">
-          <FooterButtom/>
+          <FooterButtom />
         </div>
       </section>
     </>

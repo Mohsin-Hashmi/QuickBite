@@ -45,6 +45,10 @@ const foodItemSchema = new mongoose.Schema({
 });
 
 const restaurantSchema = new mongoose.Schema({
+  image: {
+    type: String, // URL or file path for restaurant's image
+    required: true
+  },
   name: {
     type: String,
     required: true,
@@ -107,10 +111,7 @@ const restaurantSchema = new mongoose.Schema({
       createdAt: { type: Date, default: Date.now },
     },
   ],
-  image: {
-    type: String, // URL or file path for restaurant's image
-    required: true
-  },
+  
 });
 
 const Restaurant = mongoose.model("Restaruant", restaurantSchema);

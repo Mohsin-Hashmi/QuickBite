@@ -20,9 +20,7 @@ const Navbar = () => {
                 <li>
                   <Link to="/">Home</Link>
                 </li>
-                <li>
-                  <Link to="/">Menu</Link>
-                </li>
+              
                 <li>
                   <Link to="/addrestaurant">Add Restaurant</Link>
                 </li>
@@ -30,7 +28,7 @@ const Navbar = () => {
                   <Link to="/">Our Policies</Link>
                 </li>
                 <li>
-                  <Link to="/">Contant us</Link>
+                  <Link to="/contactus">Contant us</Link>
                 </li>
               </ul>
               <div className="flex gap-x-[50px]">
