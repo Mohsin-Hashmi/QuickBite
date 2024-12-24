@@ -101,7 +101,13 @@ authRouter.post("/api/users/logout", async (req, res) => {
 authRouter.post("/api/users/contactus", userAuth, async (req, res) => {
   try {
     const loggedInUser = req.user;
+  
     const { firstName, lastName, emailId, phoneNumber, message } = req.body;
+    if(!loggedInUser){
+      return res.status(400).json({
+        message: "User not found"
+      })
+    }
     validateContactUs(req);
 
     const contactUs= new ContactUs({
@@ -111,6 +117,7 @@ authRouter.post("/api/users/contactus", userAuth, async (req, res) => {
       phoneNumber,
       message
     })
+
     await contactUs.save();
     res.status(200).json({
       message: "Contact Us form submitted successfully",
