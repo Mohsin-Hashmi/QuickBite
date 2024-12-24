@@ -7,7 +7,7 @@ import Layout from "./components/Layout";
 import AddRestaurant from "./pages/AddRestaurant";
 import AddResturantMenu from "./pages/AddResturantMenu";
 import RestaurantDetails from "./components/RestaurantDetails";
-import ContactUs from "./components/ContactUs";
+import ContactUs from "./pages/ContactUs";
 function App() {
   return (
     <BrowserRouter>

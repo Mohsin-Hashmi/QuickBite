@@ -1,6 +1,6 @@
-import Navbar from "./Navbar";
-import Footer from "./Footer";
-import FooterButtom from "./FooterButtom";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import FooterButtom from "../components/FooterButtom";
 import { assets } from "../assets/images/assets";
 const ContactUs = () => {
   return (
@@ -21,7 +21,7 @@ const ContactUs = () => {
                 <p className="text-[18px] font-[500] text-[#FFFFFF] mt-[6px]">
                   Say something to start a live chat!
                 </p>
-                <div className="max-w-[337px] pt-[111px]">
+                <div className="w-[337px] pt-[111px]">
                   <div className="flex gap-x-[25px] mb-[50px]">
                     <img src={assets.phoneLogo} alt="phone logo" />
                     <p className="text-[#FFFFFF] font-[500]">+1012 3456 789</p>
@@ -36,7 +36,30 @@ const ContactUs = () => {
                   </div>
                 </div>
               </div>
-              <div>mohsin</div>
+              <div className="py-[60px] px-[50px] w-full">
+                <div className="flex gap-x-[39px] flex-wrap gap-y-[46px] items-center ">
+                  <div className="min-w-[278px]">
+                    <label className="text-[12px] text-[#8D8D8D] mb-[10px] font-[500]" htmlFor="">First Name</label>
+                    <input className="  border-b-2 block w-full p-[10px] outline-none" type="text" />
+                  </div>
+                  <div className="min-w-[278px]">
+                    <label className="text-[12px] text-[#8D8D8D] mb-[10px] font-[500]" htmlFor="">Last Name</label>
+                    <input className="border-b-2  block w-full p-[10px] outline-none" type="text" />
+                  </div>
+                  <div className="min-w-[278px]">
+                    <label className="text-[12px] text-[#8D8D8D] mb-[10px] font-[500]" htmlFor="">Email</label>
+                    <input className="border-b-2  block w-full p-[10px] outline-none" type="email" />
+                  </div>
+                  <div className="min-w-[278px]">
+                    <label className="text-[12px] text-[#8D8D8D] mb-[10px] font-[500]" htmlFor="">Phone Number</label>
+                    <input className="border-b-2  block w-full p-[10px] outline-none" type="tel" />
+                  </div>
+                  
+
+                  
+                  
+                </div>
+              </div>
             </div>
           </div>
         </div>
