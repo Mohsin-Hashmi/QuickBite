@@ -62,6 +62,9 @@ const userSchema= new mongoose.Schema({
         enum: ['admin', 'user'], // Define roles here
         default: 'user', // Default role
     },
+    message:{
+        type: String
+    }
 })
 
 /**Creating the model */

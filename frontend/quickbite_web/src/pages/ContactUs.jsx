@@ -31,34 +31,80 @@ const ContactUs = () => {
                     <p className="text-[#FFFFFF] font-[500]">demo@gmail.com</p>
                   </div>
                   <div className="flex gap-x-[25px] items-start">
-                  <img src={assets.locationLogo} alt="location logo" />
-                  <p className="text-[#FFFFFF] font-[500]">132 Dartmouth Street Boston, Massachusetts 02156 United States</p>
+                    <img src={assets.locationLogo} alt="location logo" />
+                    <p className="text-[#FFFFFF] font-[500]">
+                      132 Dartmouth Street Boston, Massachusetts 02156 United
+                      States
+                    </p>
                   </div>
                 </div>
               </div>
               <div className="py-[60px] px-[50px] w-full">
                 <div className="flex gap-x-[39px] flex-wrap gap-y-[46px] items-center ">
                   <div className="min-w-[278px]">
-                    <label className="text-[12px] text-[#8D8D8D] mb-[10px] font-[500]" htmlFor="">First Name</label>
-                    <input className="  border-b-2 block w-full p-[10px] outline-none" type="text" />
+                    <label
+                      className="text-[12px] text-[#8D8D8D] mb-[10px] font-[500]"
+                      htmlFor=""
+                    >
+                      First Name
+                    </label>
+                    <input
+                      className="  border-b-2 font-[500] text-[13px]  block w-full p-[10px] outline-none "
+                      type="text"
+                    />
                   </div>
                   <div className="min-w-[278px]">
-                    <label className="text-[12px] text-[#8D8D8D] mb-[10px] font-[500]" htmlFor="">Last Name</label>
-                    <input className="border-b-2  block w-full p-[10px] outline-none" type="text" />
+                    <label
+                      className="text-[12px] text-[#8D8D8D] mb-[10px] font-[500]"
+                      htmlFor=""
+                    >
+                      Last Name
+                    </label>
+                    <input
+                      className="border-b-2 font-[500] text-[13px]  block w-full p-[10px] outline-none"
+                      type="text"
+                    />
                   </div>
                   <div className="min-w-[278px]">
-                    <label className="text-[12px] text-[#8D8D8D] mb-[10px] font-[500]" htmlFor="">Email</label>
-                    <input className="border-b-2  block w-full p-[10px] outline-none" type="email" />
+                    <label
+                      className="text-[12px] text-[#8D8D8D] mb-[10px] font-[500]"
+                      htmlFor=""
+                    >
+                      Email
+                    </label>
+                    <input
+                      className="border-b-2 font-[500] text-[13px]  block w-full p-[10px] outline-none"
+                      type="email"
+                    />
                   </div>
                   <div className="min-w-[278px]">
-                    <label className="text-[12px] text-[#8D8D8D] mb-[10px] font-[500]" htmlFor="">Phone Number</label>
-                    <input className="border-b-2  block w-full p-[10px] outline-none" type="tel" />
+                    <label
+                      className="text-[12px] text-[#8D8D8D] mb-[10px] font-[500]"
+                      htmlFor=""
+                    >
+                      Phone Number
+                    </label>
+                    <input
+                      className="border-b-2 font-[500] text-[13px]  block w-full p-[10px] outline-none"
+                      type="tel"
+                    />
                   </div>
-                  
-
-                  
-                  
                 </div>
+                <div className="mt-[50px]">
+                  <label
+                    className="text-[12px] text-[#8D8D8D] mb-[10px] font-[500]"
+                    htmlFor=""
+                  >
+                    Message
+                  </label>
+                  <input
+                    className="border-b-2 font-[500] text-[13px]  block min-w-[595px] p-[10px] outline-none"
+                    type="text"
+                  />
+                </div>
+                <button className="py-[19px] px-[48px] mt-[45px] bg-[#FFA500] font-[500]  border rounded-[5px] float-right hover:bg-[#FFFFFF] hover:text-[#FFA500] hover:border hover:border-[#FFA500]">
+                  Send Message
+                </button>
               </div>
             </div>
           </div>

@@ -17,17 +17,17 @@ const Navbar = () => {
               </Link>
 
               <ul className="navbar-menu flex items-center gap-x-[62px]">
-                <li>
+                <li className="font-[500]">
                   <Link to="/">Home</Link>
                 </li>
               
-                <li>
+                <li className="font-[500]">
                   <Link to="/addrestaurant">Add Restaurant</Link>
                 </li>
-                <li>
+                <li className="font-[500]">
                   <Link to="/">Our Policies</Link>
                 </li>
-                <li>
+                <li className="font-[500]">
                   <Link to="/contactus">Contant us</Link>
                 </li>
               </ul>

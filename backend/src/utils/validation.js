@@ -1,7 +1,6 @@
 const Validator = require("validator");
 const validateSignUpUser = (req) => {
   const { firstName, lastName, emailId, password } = req.body;
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!firstName || !lastName || !emailId || !password) {
     throw new Error("All fields are required");
   } else if (!Validator.isEmail(emailId)) {
@@ -53,9 +52,20 @@ const validRestaurantEditableFields = (req) => {
   );
   return isEditAllowed;
 };
+
+const validateContactUs= (req)=>{
+  const {firstName, lastName,emailId,phoneNumber,message}= req.body;
+  if(!firstName || !lastName || !emailId || !phoneNumber || !message){
+    throw new Error("All fields are required");
+  }
+  else if(!Validator.isEmail(emailId)){
+    throw new Error("Invalid email format");
+  }
+}
 module.exports = {
   validateSignUpUser,
   validEditableFields,
   validRestaurantsFields,
-  validRestaurantEditableFields
+  validRestaurantEditableFields,
+  validateContactUs,
 };
