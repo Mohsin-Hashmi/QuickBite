@@ -90,7 +90,7 @@ const ContactUs = () => {
                         First Name
                       </label>
                       <input
-                        className="  border-b-2 font-[500] text-[13px]  block w-full p-[10px] outline-none "
+                        className="  border-b-2 border-[#a6a6a6] font-[500] text-[13px]  block w-full p-[10px] outline-none "
                         type="text"
                         value={firstName}
                         onChange={(e) => setFirstName(e.target.value)}
@@ -105,7 +105,7 @@ const ContactUs = () => {
                         Last Name
                       </label>
                       <input
-                        className="border-b-2 font-[500] text-[13px]  block w-full p-[10px] outline-none"
+                        className="border-b-2 font-[500] border-[#a6a6a6]  text-[13px]  block w-full p-[10px] outline-none"
                         type="text"
                         value={lastName}
                         onChange={(e) => setLastName(e.target.value)}
@@ -120,7 +120,7 @@ const ContactUs = () => {
                         Email
                       </label>
                       <input
-                        className="border-b-2 font-[500] text-[13px]  block w-full p-[10px] outline-none"
+                        className="border-b-2 border-[#a6a6a6]  font-[500] text-[13px]  block w-full p-[10px] outline-none"
                         type="email"
                         value={emailId}
                         onChange={(e) => setEmailId(e.target.value)}
@@ -135,7 +135,7 @@ const ContactUs = () => {
                         Phone Number
                       </label>
                       <input
-                        className="border-b-2 font-[500] text-[13px]  block w-full p-[10px] outline-none"
+                        className="border-b-2 border-[#a6a6a6]  font-[500] text-[13px]  block w-full p-[10px] outline-none"
                         type="tel"
                         value={phoneNumber}
                         onChange={(e) => setPhoneNumber(e.target.value)}
@@ -151,7 +151,7 @@ const ContactUs = () => {
                       Message
                     </label>
                     <input
-                      className="border-b-2 font-[500] text-[13px]  block min-w-[595px] p-[10px] outline-none"
+                      className="border-b-2 border-[#a6a6a6]  font-[500] text-[13px]  block min-w-[595px] p-[10px] outline-none"
                       type="text"
                       value={message}
                       onChange={(e) => setMessage(e.target.value)}
