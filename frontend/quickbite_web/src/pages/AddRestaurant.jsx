@@ -11,8 +11,8 @@ const AddRestaurant = () => {
           <h1 className="text-center text-[40px] mb-[30px] ">
             Add Your Restaurant
           </h1>
-          <div className="w-full m-auto">
-            <form action="">
+          <div className="w-full m-auto shadow-2xl rounded-3xl  p-[50px]">
+            <form action="" className="">
               <div className="flex flex-wrap">
                 <label className="mb-[10px]  text-[17px] text-[#8D8D8D] font-[500]" htmlFor="restaurantName">
                   Enter Your Restaurant Name:

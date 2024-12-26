@@ -50,16 +50,7 @@ footer,nav {
   font-family: Inter;
 }
 
-.bg-Image {
-  background-image: url("./assets/images/food-bg.webp");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 ::placeholder {
   @apply text-sm; /* Example: small font size */
 }

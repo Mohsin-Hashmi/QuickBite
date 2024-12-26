@@ -66,6 +66,8 @@ import snapChatLogo from "./snapchatLogo.webp"
 import locationLogo from "./locationLogo.webp";
 import phoneLogo from "./phoneLogo.webp";
 import emailLogo from "./emailLogo.webp";
+import food_bg from "./food-bg.webp";
+
 export const assets = {
     logo,
     basket_icon,
@@ -93,6 +95,7 @@ export const assets = {
     phoneLogo,
     emailLogo,
     locationLogo,
+    food_bg
 }
 
 export const menu_list = [
