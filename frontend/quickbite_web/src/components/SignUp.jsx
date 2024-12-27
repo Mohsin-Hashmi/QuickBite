@@ -42,20 +42,20 @@ const SignUp = () => {
     <>
       <section className="signup">
         <div className="container">
-          <div className="flex justify-center items-center gap-x-[50px] border-2 border-[#808080] h-[700px] rounded-2xl bg-opacity-90 shadow-2xl  px-[39px] py-[45px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2  w-[1000px]">
-            <div className="">
+          <div className="flex justify-center items-center gap-x-[50px]    border-2 border-[#808080] h-[590px] rounded-2xl bg-opacity-90 shadow-2xl  px-[25px] py-[45px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2  w-[1000px]">
+            <div className="w-full">
               <h1 className="text-[24px] text-center text-gray-800">
                 Create an account
               </h1>
               <p className="text-[14px] font-[700] text-center mt-[7px] text-gray-500">
                 Get Your Favorite Meals Delivered Fast!
               </p>
-              <form className="mt-[36px] block" onSubmit={handleSubmit}>
+              <form className="mt-[15px] " onSubmit={handleSubmit}>
                 <input
                   type="text"
                   value={firstName}
                   onChange={(e) => setFirstName(e.target.value)}
-                  className="border border-[#808080] block w-full py-[12px] px-[11px] text-[16px] outline-none rounded-[10px]  focus:outline-none focus:ring-2 focus:ring-blue-500 "
+                  className="border border-[#808080] block w-full py-[12px] px-[11px] text-[16px] outline-none rounded-[10px]  focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder:font-[500] font-[500]"
                   placeholder="First Name"
                   required
                 />
@@ -63,7 +63,7 @@ const SignUp = () => {
                   type="text"
                   value={lastName}
                   onChange={(e) => setLastName(e.target.value)}
-                  className="border border-[#808080] block w-full py-[12px] px-[11px] text-[16px] outline-none rounded-[10px] mt-[28px]  focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="border border-[#808080] block w-full py-[12px] px-[11px] text-[16px] outline-none rounded-[10px] mt-[10px]  focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder:font-[500] font-[500]"
                   placeholder="Last Name"
                   required
                 />
@@ -71,7 +71,7 @@ const SignUp = () => {
                   type="email"
                   value={emailId}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="border border-[#808080] block w-full py-[12px] px-[11px] text-[16px] outline-none rounded-[10px] mt-[28px]  focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="border border-[#808080] block w-full py-[12px] px-[11px] text-[16px] outline-none rounded-[10px] mt-[10px]  focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder:font-[500] font-[500]"
                   placeholder="Email Id"
                   required
                 />
@@ -79,7 +79,7 @@ const SignUp = () => {
                   type={showPassword ? "text" : "password"}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="border border-[#808080] block w-full py-[12px] px-[11px] text-[16px] outline-none rounded-[10px] mt-[28px]  focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="border border-[#808080] block w-full py-[12px] px-[11px] text-[16px] outline-none rounded-[10px] mt-[10px]  focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder:font-[500] font-[500]"
                   placeholder="Password"
                   required
                 />
@@ -87,7 +87,7 @@ const SignUp = () => {
                   id="options"
                   value={role}
                   onChange={(e) => setRole(e.target.value)}
-                  className="border border-[#808080] block w-full py-[12px] px-[11px] text-[16px] outline-none rounded-[10px] mt-[28px] text-sm text-[#808080]  focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="border border-[#808080] block w-full py-[12px] px-[11px] text-[16px] outline-none rounded-[10px] mt-[10px] text-sm text-[#808080]  focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder:font-[500] font-[500]"
                 >
                   <option value="" disabled>
                     Select an option
@@ -102,7 +102,7 @@ const SignUp = () => {
                 <div className="flex items-center gap-x-[5px]">
                   <input
                     type="checkbox"
-                    className="relative left-0 top-1"
+                    className="relative left-0 top-1 font-[500]"
                     checked={showPassword}
                     onChange={handleShowPassword}
                   />
@@ -113,20 +113,20 @@ const SignUp = () => {
 
                 <button
                   type="submit"
-                  className="w-full py-[12px] px-[123px] bg-[#0E64D2] text-[#FFFFFF] mt-[29px] mb-[32px] rounded-[5px] text-[16px] font-[500]"
+                  className=" py-[12px] px-[130px]  bg-[#0E64D2] text-[#FFFFFF] mt-[29px] mb-[32px] rounded-[5px] text-[15px] font-[500]"
                 >
-                  Sign Up
+                  Signup
                 </button>
-                <p className="text-center">
+                <p className="text-center font-[500]">
                   Already have an account?{" "}
-                  <Link className="text-[#2F89FC]" to="/login">
+                  <Link className="text-[#2F89FC]  hover:underline hover:underline-offset-4" to="/login">
                     Login
                   </Link>
                 </p>
               </form>
             </div>
             <div>
-              <img src={assets.food_bg} alt=" bg image" />
+              <img className="rounded-2xl" src={assets.food_bg} alt=" bg image" />
             </div>
           </div>
         </div>
