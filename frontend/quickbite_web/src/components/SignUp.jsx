@@ -45,9 +45,9 @@ const SignUp = () => {
           <div className="flex justify-center items-center gap-x-[50px]    border-2 border-[#808080] h-[590px] rounded-2xl bg-opacity-90 shadow-2xl  px-[25px] py-[45px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2  w-[1000px]">
             <div className="w-full">
               <h1 className="text-[24px] text-center text-gray-800">
-                Create an account
+                Create Your Account
               </h1>
-              <p className="text-[14px] font-[700] text-center mt-[7px] text-gray-500">
+              <p className="text-[14px] font-[500] text-center mt-[7px] text-gray-500">
                 Get Your Favorite Meals Delivered Fast!
               </p>
               <form className="mt-[15px] " onSubmit={handleSubmit}>
@@ -106,14 +106,14 @@ const SignUp = () => {
                     checked={showPassword}
                     onChange={handleShowPassword}
                   />
-                  <p className="text-sm text-[#808080] mt-[8px]">
+                  <p className="text-sm text-[#808080] mt-[8px] font-[500]">
                     show password
                   </p>
                 </div>
 
                 <button
                   type="submit"
-                  className=" py-[12px] px-[130px]  bg-[#0E64D2] text-[#FFFFFF] mt-[29px] mb-[32px] rounded-[5px] text-[15px] font-[500]"
+                  className=" py-[12px] px-[130px]  bg-[#0E64D2] text-[#FFFFFF] mt-[29px] mb-[32px] rounded-[5px] text-[15px] font-[500] hover:bg-[#FFFFFF] hover:text-[#0E64D2] border hover:border-[#0E64D2]"
                 >
                   Signup
                 </button>

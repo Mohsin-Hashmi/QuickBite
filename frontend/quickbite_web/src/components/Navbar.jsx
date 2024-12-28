@@ -1,5 +1,6 @@
 import { assets } from "../assets/images/assets";
 import { Link, useNavigate } from "react-router-dom";
+
 const Navbar = () => {
   const navigate = useNavigate();
 
@@ -8,10 +9,9 @@ const Navbar = () => {
   };
   return (
     <>
-      
-        <div className="navbar relative">
-          <div className="container ">
-            <nav className="flex items-center justify-between pt-[30px] font-[700]">
+        <section className="navbar relative">
+          <div className="container">
+            <nav className="flex items-center justify-between pt-[30px] font-[700] ">
               <Link to="/home">
                 <img src={assets.logo} alt="logo" />
               </Link>
@@ -46,7 +46,7 @@ const Navbar = () => {
               </button>
             </nav>
           </div>
-        </div>
+        </section>
       
     </>
   );

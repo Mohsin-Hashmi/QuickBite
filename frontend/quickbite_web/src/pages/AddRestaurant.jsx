@@ -11,10 +11,13 @@ const AddRestaurant = () => {
           <h1 className="text-center text-[40px] mb-[30px] ">
             Add Your Restaurant
           </h1>
-          <div className="w-full m-auto shadow-2xl rounded-3xl  p-[50px]">
+          <div className="max-w-[900px] w-[100%] border-2 border-[#808080]   m-auto shadow-2xl rounded-3xl  p-[50px]">
             <form action="" className="">
               <div className="flex flex-wrap">
-                <label className="mb-[10px]  text-[17px] text-[#8D8D8D] font-[500]" htmlFor="restaurantName">
+                <label
+                  className="mb-[10px]  text-[17px] text-[#8D8D8D] font-[500]"
+                  htmlFor="restaurantName"
+                >
                   Enter Your Restaurant Name:
                 </label>
                 <input
@@ -23,7 +26,10 @@ const AddRestaurant = () => {
                   className="w-full border-b  border-[#8D8D8D] p-[10px] outline-none  mb-[20px] font-[500] text-[17px] "
                   required
                 />
-                <label className="mb-[10px] text-[17px] text-[#8D8D8D] font-[500]" htmlFor="restaurantEmail">
+                <label
+                  className="mb-[10px] text-[17px] text-[#8D8D8D] font-[500]"
+                  htmlFor="restaurantEmail"
+                >
                   Enter Your Restaurant Email:
                 </label>
                 <input
@@ -32,7 +38,10 @@ const AddRestaurant = () => {
                   className="w-full border-b  border-[#8D8D8D] p-[10px] outline-none  mb-[20px] font-[500] text-[17px]"
                   required
                 />
-                <label className="mb-[10px] text-[17px] text-[#8D8D8D] font-[500]" htmlFor="restaurantImage">
+                <label
+                  className="mb-[10px] text-[17px] text-[#8D8D8D] font-[500]"
+                  htmlFor="restaurantImage"
+                >
                   Enter Your Restaurant Image:
                 </label>
                 <input
@@ -41,7 +50,10 @@ const AddRestaurant = () => {
                   className="w-full border-b  border-[#8D8D8D] p-[10px] outline-none  mb-[20px] font-[500] text-[17px]"
                   required
                 />
-                <label className="mb-[10px] text-[17px] text-[#8D8D8D] font-[500]" htmlFor="restaurantPhoneNo">
+                <label
+                  className="mb-[10px] text-[17px] text-[#8D8D8D] font-[500]"
+                  htmlFor="restaurantPhoneNo"
+                >
                   Enter Your Restaurant Phone Number:
                 </label>
                 <input
@@ -50,7 +62,10 @@ const AddRestaurant = () => {
                   className="w-full border-b  border-[#8D8D8D] p-[10px] outline-none  mb-[20px] font-[500] text-[17px]"
                   required
                 />
-                <label className="mb-[10px] text-[17px] text-[#8D8D8D] font-[500]" htmlFor="restaurantDescription">
+                <label
+                  className="mb-[10px] text-[17px] text-[#8D8D8D] font-[500]"
+                  htmlFor="restaurantDescription"
+                >
                   Enter Your Restaurant Description:
                 </label>
                 <input
@@ -59,7 +74,10 @@ const AddRestaurant = () => {
                   className="w-full border-b  border-[#8D8D8D] p-[10px] outline-none  mb-[20px] font-[500] text-[17px]"
                   required
                 />
-                <label className="mb-[10px] text-[17px] text-[#8D8D8D] font-[500]" htmlFor="restaurantAddress">
+                <label
+                  className="mb-[10px] text-[17px] text-[#8D8D8D] font-[500]"
+                  htmlFor="restaurantAddress"
+                >
                   Enter Your Restaurant Address:
                 </label>
                 <input
@@ -68,7 +86,10 @@ const AddRestaurant = () => {
                   className="w-full border-b  border-[#8D8D8D] p-[10px] outline-none  mb-[20px] font-[500] text-[17px]"
                   required
                 />
-                <label className="mb-[10px] text-[17px] text-[#8D8D8D] font-[500]" htmlFor="restaurantOpeningHours">
+                <label
+                  className="mb-[10px] text-[17px] text-[#8D8D8D] font-[500]"
+                  htmlFor="restaurantOpeningHours"
+                >
                   Enter Your Restaurant Opening Hours:
                 </label>
                 <input
@@ -78,16 +99,20 @@ const AddRestaurant = () => {
                   required
                 />
               </div>
-            </form>
-            <Link to="/addrestaurantmenu">
-              <button type="submit" className="bg-[#FFA500] p-[15px] rounded-3xl font-[700] text-[15px] text-[#000]">
-                Enter Your Restaurant Menu
-              </button>
-            </Link>
 
-            <button className="w-[140px] bg-[#FFA500] p-[15px] rounded-3xl font-[700] block m-auto text-[#000] ">
-              Submit
-            </button>
+              <Link to="/addrestaurantmenu">
+                <button
+                  type="submit"
+                  className="bg-[#FFA500] p-[15px] rounded-3xl mt-[20px] font-[500] text-[15px] text-[#000] border hover:bg-[#FFFFFF] hover:text-[#FFA500] hover:border-[#FFA500]"
+                >
+                  Enter Your Restaurant Menu
+                </button>
+              </Link>
+
+              <button className="w-[140px] bg-[#FFA500] p-[15px] rounded-3xl font-[500]  block mt-[20px] m-auto border text-[#000] hover:bg-[#FFFFFF] hover:text-[#FFA500] hover:border-[#FFA500]">
+                Submit
+              </button>
+            </form>
           </div>
         </div>
       </section>
@@ -98,7 +123,7 @@ const AddRestaurant = () => {
       </section>
       <section className="bg-[#03081F] ">
         <div className="container">
-          <FooterButtom/>
+          <FooterButtom />
         </div>
       </section>
     </>

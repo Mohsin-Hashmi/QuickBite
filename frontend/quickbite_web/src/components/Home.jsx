@@ -32,7 +32,7 @@ const Home = () => {
   return (
     <>
       <section className="relative pb-[100px]">
-        <div className="container ">
+        <div className="container">
           <h1 className=" pb-[50px] text-center text-3xl">All Restaurant</h1>
           <div className="cardContainer flex flex-wrap justify-evenly  gap-[30px] font-[700]">
             {error && <p className="text-red-500">{error}</p>}{" "}
