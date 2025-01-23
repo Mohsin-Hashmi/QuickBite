@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { BASE_URL } from "../utils/constant";
 import { assets } from "../assets/images/assets";
+import axios from "axios";
 const SignUp = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -16,14 +17,9 @@ const SignUp = () => {
     setShowPassword((prev) => !prev);
   };
   const validationFields = () => {
-    const newError = {
-      firstName: !firstName,
-      lastName: !lastName,
-      emailId: !emailId,
-      password: !password,
-      role: !role,
-    };
-    setError(newError);
+    const isValid= firstName && lastName && emailId && password && role;
+    setError({firstName:!firstName, lastName:!lastName, emailId:!emailId, password:!password, role:!role});
+    return isValid;
   };
   const handleInputChange = (field, value) => {
     if (field === "firstName") {
@@ -49,25 +45,23 @@ const SignUp = () => {
   };
   const handleSubmit = async (event) => {
     event.preventDefault();
-    try {
-      const response = await fetch(BASE_URL + "/api/users/signup", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ firstName, lastName, emailId, password, role }),
-        credentials: "include",
-      });
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.message || "Invalid Credentials");
+    if(validationFields()){
+      try {
+        const response = await axios.post(`${BASE_URL}/api/users/signup`,
+          {firstName, lastName, emailId, password, role},
+          {withCredentials:true}
+        )
+        if (response.status===200) {
+          localStorage.setItem("token", response.data.token);
+          navigate("/home");
+        }else{
+          throw new Error("Invalid credentials");
+        }
+      } catch (err) {
+        err.Error(err.response?.data?.message || err.message);
       }
-      const user = await response.json();
-      localStorage.setItem("token", user.token);
-
-      // Navigate to profile page
-      navigate("/home");
-    } catch (err) {
-      console.log(err);
     }
+    
   };
 
   return (

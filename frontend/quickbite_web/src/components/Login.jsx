@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { BASE_URL } from "../utils/constant";
 import { assets } from "../assets/images/assets";
+import axios from "axios";
 const Login = () => {
   const [emailId, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -14,8 +15,9 @@ const Login = () => {
   };
 
   const validationFields = () => {
-    const newError = { emailId: !emailId, password: !password };
-    setError(newError);
+    const isValid = emailId && password;
+    setError({ emailId: !emailId, password: !password });
+    return isValid;
   };
   const handleInputChange = (field, value) => {
     if (field === "emailId") {
@@ -31,23 +33,19 @@ const Login = () => {
     event.preventDefault();
     if (validationFields()) {
       try {
-        const response = await fetch(BASE_URL + "/api/users/login", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ emailId, password }),
-          credentials: "include",
-        });
-        if (!response.ok) {
-          const errorData = await response.json();
-          throw new Error(errorData.message || "Invalid Credentials");
+        const response = await axios.post(
+          `${BASE_URL}/api/users/login`,
+          { emailId, password },
+          { withCredentials: true }
+        );
+        if (response.status === 200) {
+          localStorage.setItem("token", response.data.token);
+          navigate("/home");
+        } else {
+          throw new Error("Invalid credentials");
         }
-        const user = await response.json();
-        localStorage.setItem("token", user.token);
-
-        // Navigate to profile page
-        navigate("/home");
       } catch (err) {
-        console.log(err);
+        err.Error(err.response?.data?.message || err.message);
       }
     }
   };

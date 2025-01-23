@@ -9,7 +9,7 @@ const jwt = require("jsonwebtoken");
 const dotenv = require("dotenv");
 const Validator = require("validator");
 const userAuth = require("../middleware/auth");
-const ContactUs= require('../models/contactus');
+const ContactUs = require("../models/contactus");
 /**Creating the signup API */
 authRouter.post("/api/users/signup", async (req, res) => {
   try {
@@ -65,7 +65,6 @@ authRouter.post("/api/users/login", async (req, res) => {
     const token = await jwt.sign(
       { _id: user._id },
       process.env.SERVER_SECRET_CODE,
-
       { expiresIn: "7d" }
     );
 
@@ -101,28 +100,27 @@ authRouter.post("/api/users/logout", async (req, res) => {
 authRouter.post("/api/users/contactus", userAuth, async (req, res) => {
   try {
     const loggedInUser = req.user;
-  
+
     const { firstName, lastName, emailId, phoneNumber, message } = req.body;
-    if(!loggedInUser){
+    if (!loggedInUser) {
       return res.status(400).json({
-        message: "User not found"
-      })
+        message: "User not found",
+      });
     }
     validateContactUs(req);
 
-    const contactUs= new ContactUs({
+    const contactUs = new ContactUs({
       firstName,
       lastName,
       emailId,
       phoneNumber,
-      message
-    })
+      message,
+    });
 
     await contactUs.save();
     res.status(200).json({
       message: "Contact Us form submitted successfully",
     });
-
   } catch (err) {
     res.status(400).send(err.message);
   }
