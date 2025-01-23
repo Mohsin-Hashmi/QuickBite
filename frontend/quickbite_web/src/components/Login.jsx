@@ -14,39 +14,41 @@ const Login = () => {
   };
 
   const validationFields = () => {
-    const newError = { emailId: !emailId, password: !password }; 
+    const newError = { emailId: !emailId, password: !password };
     setError(newError);
   };
   const handleInputChange = (field, value) => {
-    if (field === 'emailId') {
+    if (field === "emailId") {
       setEmail(value);
       if (value) setError((prev) => ({ ...prev, emailId: false })); // Reset error for emailId
     }
-    if (field === 'password') {
+    if (field === "password") {
       setPassword(value);
       if (value) setError((prev) => ({ ...prev, password: false })); // Reset error for password
     }
   };
   const handleSubmit = async (event) => {
     event.preventDefault();
-    try {
-      const response = await fetch(BASE_URL + "/api/users/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ emailId, password }),
-        credentials: "include",
-      });
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.message || "Invalid Credentials");
-      }
-      const user = await response.json();
-      localStorage.setItem("token", user.token);
+    if (validationFields()) {
+      try {
+        const response = await fetch(BASE_URL + "/api/users/login", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ emailId, password }),
+          credentials: "include",
+        });
+        if (!response.ok) {
+          const errorData = await response.json();
+          throw new Error(errorData.message || "Invalid Credentials");
+        }
+        const user = await response.json();
+        localStorage.setItem("token", user.token);
 
-      // Navigate to profile page
-      navigate("/home");
-    } catch (err) {
-      console.log(err);
+        // Navigate to profile page
+        navigate("/home");
+      } catch (err) {
+        console.log(err);
+      }
     }
   };
 
@@ -64,21 +66,27 @@ const Login = () => {
                 <input
                   type="email"
                   value={emailId}
-                  onChange={(e) => handleInputChange('emailId', e.target.value)}
+                  onChange={(e) => handleInputChange("emailId", e.target.value)}
                   className={`font-[500] border border-[#808080] block w-full py-[12px] px-[11px] text-[16px] outline-none rounded-[10px] mt-[28px] focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder:font-[500] ${
-                    error.emailId ? 'placeholder-red-500 border-red-500' : ''
+                    error.emailId ? "placeholder-red-500 border-red-500" : ""
                   }`}
-                  placeholder={error.emailId ? 'Email is required*' : 'Email Id'}
+                  placeholder={
+                    error.emailId ? "Email is required*" : "Email Id"
+                  }
                 />
-               
+
                 <input
                   type={showPassword ? "text" : "password"}
                   value={password}
-                  onChange={(e) => handleInputChange('password' ,e.target.value)}
+                  onChange={(e) =>
+                    handleInputChange("password", e.target.value)
+                  }
                   className={`font-[500] border border-[#808080] block w-full py-[12px] px-[11px] text-[16px] outline-none rounded-[10px] mt-[28px] focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder:font-[500] ${
-                    error.password ? 'placeholder-red-500 border-red-500' : ''
+                    error.password ? "placeholder-red-500 border-red-500" : ""
                   }`}
-                  placeholder={error.password ? 'Password is required*' : 'Password'}
+                  placeholder={
+                    error.password ? "Password is required*" : "Password"
+                  }
                 />
                 <div className="flex items-center gap-x-[5px]">
                   <input
@@ -93,7 +101,6 @@ const Login = () => {
                 </div>
                 <button
                   type="submit"
-                  onClick={validationFields}
                   className="w-full py-[12px] px-[123px] bg-[#0E64D2] hover:bg-[#FFFFFF] hover:text-[#0E64D2] border hover:border-[#0E64D2] text-[#FFFFFF] mt-[29px] mb-[32px] rounded-[5px] text-[16px] font-[500]"
                 >
                   Login
