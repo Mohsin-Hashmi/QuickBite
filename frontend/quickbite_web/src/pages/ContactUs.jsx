@@ -4,6 +4,7 @@ import FooterButtom from "../components/FooterButtom";
 import { assets } from "../assets/images/assets";
 import { BASE_URL } from "../../src/utils/constant";
 import { useState } from "react";
+import axios from 'axios';
 const ContactUs = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -14,25 +15,10 @@ const ContactUs = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await fetch(BASE_URL + "/api/users/contactus", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          firstName,
-          lastName,
-          emailId,
-          phoneNumber,
-          message,
-        }),
-        credentials: "include",
-      });
-      if (!response.ok) {
-        const errorMessage = await response.json();
-        throw new Error(errorMessage.message || "Error to fetch data");
+      const response = await axios.post(`${BASE_URL}/api/users/contactus`, {firstName, lastName, emailId, phoneNumber,message}, {withCredentials:true});
+      if (response.status===200) {
+        localStorage.setItem("token", response.data.token);
       }
-      const user = await response.json();
-      localStorage.setItem("token", user.token);
-    
       setFirstName('');
       setLastName('');
       setEmailId('');
@@ -40,7 +26,7 @@ const ContactUs = () => {
       setMessage('');
       alert("Message sent successfully");
     } catch (err) {
-      console.log(err, err.message);
+      err.Error(err.response?.data?.message, err.message);
     }
   };
   return (
@@ -50,10 +36,10 @@ const ContactUs = () => {
         <div className="container">
           <div className="wrapper py-[70px] ">
             <h2 className="text-center text-[40px] font-[700]">Contact Us </h2>
-            <p className="text-center mt-[10px] text-[#717171] font-[500] ">
+            <p className="text-center mt-[10px] mb-[69px] text-[#717171] font-[500] ">
               Any question or remarks? Just write us a message!
             </p>
-            <div className="max-w-[1169px] pt-[69px] flex ">
+            <div className="max-w-[1169px] p-[20px] flex border-2 border-[#FFA500] rounded-[10px]">
               <div className="bg-[#FFA500] w-[491px] py-[40px] pl-[40px] rounded-[10px]">
                 <h4 className="text-[28px] text-[#FFFFFF]">
                   Contact Information
