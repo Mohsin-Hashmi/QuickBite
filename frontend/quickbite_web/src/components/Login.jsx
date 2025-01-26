@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { BASE_URL } from "../utils/constant";
 import { assets } from "../assets/images/assets";
+import { useDispatch } from "react-redux";
+import { addUser } from "../utils/userSlice";
 import axios from "axios";
 const Login = () => {
   const [emailId, setEmail] = useState("");
@@ -9,7 +11,7 @@ const Login = () => {
   const [showPassword, setShowPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
-
+  const dispatch= useDispatch();
   const handleShowPassword = () => {
     setShowPassword((prev) => !prev);
   };
@@ -39,7 +41,7 @@ const Login = () => {
           { withCredentials: true }
         );
         if (response.status === 200) {
-          localStorage.setItem("token", response.data.token);
+           dispatch(addUser(response.user))
           navigate("/home");
         } else {
           throw new Error("Invalid credentials");

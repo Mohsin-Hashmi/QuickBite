@@ -3,6 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { BASE_URL } from "../utils/constant";
 import { assets } from "../assets/images/assets";
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import { addUser } from "../utils/userSlice";
 const SignUp = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -12,7 +14,7 @@ const SignUp = () => {
   const [role, setRole] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
-
+  const dispatch = useDispatch();
   const handleShowPassword = () => {
     setShowPassword((prev) => !prev);
   };
@@ -52,7 +54,8 @@ const SignUp = () => {
           {withCredentials:true}
         )
         if (response.status===200) {
-          localStorage.setItem("token", response.data.token);
+          // localStorage.setItem("token", response.data.token);
+          dispatch(addUser(response.user))
           navigate("/home");
         }else{
           throw new Error("Invalid credentials");
