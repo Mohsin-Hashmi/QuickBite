@@ -7,7 +7,7 @@ const {validRestaurantEditableFields}= require('../utils/validation');
 const { Restaurant } = require("../models/restaurants");
 
 
-const RESTAURANT_PUBLIC_DATA= "name phoneNumber description address openingHours menu rating reviews image"
+const RESTAURANT_PUBLIC_DATA= "name phoneNumber description address openingHours menu rating reviews image";
 /**Register new Restaurant API */
 restaurantRouter.post("/api/add/restaurants", userAuth, isAdmin,  async (req, res) => {
   try {

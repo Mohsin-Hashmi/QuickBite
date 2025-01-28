@@ -32,7 +32,7 @@ const ContactUs = () => {
   return (
     <>
       <Navbar />
-      <section className="contactUs ">
+      <section className="contactUs">
         <div className="container">
           <div className="wrapper py-[70px] ">
             <h2 className="text-center text-[40px] font-[700]">Contact Us </h2>
@@ -70,77 +70,87 @@ const ContactUs = () => {
                   <div className="flex gap-x-[39px] flex-wrap gap-y-[46px] items-center ">
                     <div className="min-w-[278px]">
                       <label
-                        className="text-[12px] text-[#8D8D8D] mb-[10px] font-[500]"
-                        htmlFor=""
+                        className="text-[15px] text-[#000] mb-[18px] font-[500]"
+                        htmlFor="firstName"
                       >
                         First Name
                       </label>
                       <input
-                        className="  border-b-2 border-[#a6a6a6] font-[500] text-[13px]  block w-full p-[10px] outline-none "
+                        className="border-2 border-[#FFA500] font-[500] text-[15px] text-[#000]  block w-full p-[10px] outline-none rounded-lg"
                         type="text"
+                        id="firstName"
                         value={firstName}
                         onChange={(e) => setFirstName(e.target.value)}
+                        placeholder="Enter Yoyr First Name"
                         required
                       />
                     </div>
                     <div className="min-w-[278px]">
                       <label
-                        className="text-[12px] text-[#8D8D8D] mb-[10px] font-[500]"
-                        htmlFor=""
+                        className="text-[15px] text-[#000] mb-[18px] font-[500]"
+                        htmlFor="lastName"
                       >
                         Last Name
                       </label>
                       <input
-                        className="border-b-2 font-[500] border-[#a6a6a6]  text-[13px]  block w-full p-[10px] outline-none"
+                        className="border-2 border-[#FFA500] font-[500] text-[15px] text-[#000]  block w-full p-[10px] outline-none rounded-lg"
                         type="text"
+                        id="lastName"
                         value={lastName}
                         onChange={(e) => setLastName(e.target.value)}
+                        placeholder="Enter Your Last Name"
                         required
                       />
                     </div>
                     <div className="min-w-[278px]">
                       <label
-                        className="text-[12px] text-[#8D8D8D] mb-[10px] font-[500]"
-                        htmlFor=""
+                        className="text-[15px] text-[#000] mb-[18px] font-[500]"
+                        htmlFor="email"
                       >
                         Email
                       </label>
                       <input
-                        className="border-b-2 border-[#a6a6a6]  font-[500] text-[13px]  block w-full p-[10px] outline-none"
+                        className="border-2 border-[#FFA500] font-[500] text-[15px] text-[#000]  block w-full p-[10px] outline-none rounded-lg"
                         type="email"
+                        id="email"
                         value={emailId}
                         onChange={(e) => setEmailId(e.target.value)}
+                        placeholder="Enter Your Email"
                         required
                       />
                     </div>
                     <div className="min-w-[278px]">
                       <label
-                        className="text-[12px] text-[#8D8D8D] mb-[10px] font-[500]"
-                        htmlFor=""
+                        className="text-[15px] text-[#000] mb-[18px] font-[500]"
+                        htmlFor="phone"
                       >
                         Phone Number
                       </label>
                       <input
-                        className="border-b-2 border-[#a6a6a6]  font-[500] text-[13px]  block w-full p-[10px] outline-none"
+                        className="border-2 border-[#FFA500] font-[500] text-[15px] text-[#000]  block w-full p-[10px] outline-none rounded-lg"
                         type="tel"
+                        id="phone"
                         value={phoneNumber}
                         onChange={(e) => setPhoneNumber(e.target.value)}
+                        placeholder="Enter Your Phone Number"
                         required
                       />
                     </div>
                   </div>
                   <div className="mt-[50px]">
                     <label
-                      className="text-[12px] text-[#8D8D8D] mb-[10px] font-[500]"
-                      htmlFor=""
+                      className="text-[15px] text-[#000] mb-[18px] font-[500]"
+                      htmlFor="message"
                     >
                       Message
                     </label>
                     <input
-                      className="border-b-2 border-[#a6a6a6]  font-[500] text-[13px]  block min-w-[595px] p-[10px] outline-none"
+                      className="border-2 border-[#FFA500] font-[500] text-[15px] text-[#000]  block w-full p-[10px] outline-none rounded-lg"
                       type="text"
+                      id="message"
                       value={message}
                       onChange={(e) => setMessage(e.target.value)}
+                      placeholder="Enter Your Message"
                       required
                     />
                   </div>

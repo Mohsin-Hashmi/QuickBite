@@ -15,7 +15,7 @@ const Home = () => {
       });
       if (response.status === 200) {
         localStorage.setItem("token", response.token);
-        setRestaurants(response.data);
+        setRestaurants(response?.data?.data);
       } else {
         setError(response?.data?.message);
       }
@@ -28,7 +28,7 @@ const Home = () => {
   }, []);
   return (
     <>
-      <section className="relative pb-[100px]">
+      <section className="relative pb-[100px] ">
         <div className="container">
           <h1 className=" pb-[50px] text-center text-3xl">All Restaurant</h1>
           <div className="cardContainer flex flex-wrap justify-evenly  gap-[30px] font-[700]">

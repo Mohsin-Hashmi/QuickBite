@@ -42,7 +42,9 @@
   padding: 0 15px;
   margin: 0 auto;
 }
-
+body {
+  @apply bg-gradient-to-tr from-[#fdfbfb] to-[#ebedee]
+}
 section,
 header,
 footer,nav {
