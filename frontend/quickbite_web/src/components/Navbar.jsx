@@ -9,7 +9,7 @@ const Navbar = () => {
   };
   return (
     <>
-        <section className="navbar relative">
+        <section className="navbar relative ">
           <div className="container">
             <nav className="flex items-center justify-between pt-[30px] font-[700] ">
               <Link to="/home">

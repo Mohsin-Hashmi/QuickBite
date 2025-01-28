@@ -3,27 +3,24 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Footer from "./Footer";
 import FooterButtom from "./FooterButtom";
+import axios from "axios";
 const Home = () => {
   const [restaurants, setRestaurants] = useState([]);
   const [error, setError] = useState();
 
   const handleRestaurantData = async () => {
     try {
-      const response = await fetch(BASE_URL + "/api/view/restaurants", {
-        method: "GET",
-        headers: { "Content-Type": "application/json" },
-        credentials: "include",
+      const response = await axios.get(`${BASE_URL}/api/view/restaurants`, {
+        withCredentials: true,
       });
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.message || "Error to fetch data");
+      if (response.status === 200) {
+        localStorage.setItem("token", response.token);
+        setRestaurants(response.data);
+      } else {
+        setError(response?.data?.message);
       }
-      const data = await response.json();
-      localStorage.setItem("token", data.token);
-      setRestaurants(data?.data);
     } catch (err) {
-      setError(err.message);
-      console.log(err);
+      err.Error(err.response?.data?.message || err.message);
     }
   };
   useEffect(() => {

@@ -55,7 +55,7 @@ const SignUp = () => {
         )
         if (response.status===200) {
           // localStorage.setItem("token", response.data.token);
-          dispatch(addUser(response.user))
+          dispatch(addUser(response.data.user))
           navigate("/home");
         }else{
           throw new Error("Invalid credentials");

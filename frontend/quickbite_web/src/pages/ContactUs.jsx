@@ -32,7 +32,7 @@ const ContactUs = () => {
   return (
     <>
       <Navbar />
-      <section className="contactUs">
+      <section className="contactUs ">
         <div className="container">
           <div className="wrapper py-[70px] ">
             <h2 className="text-center text-[40px] font-[700]">Contact Us </h2>
