@@ -34,9 +34,9 @@ const ContactUs = () => {
       <Navbar />
       <section className="contactUs">
         <div className="container">
-          <div className="wrapper py-[70px] ">
+          <div className="wrapper py-[100px] ">
             <h2 className="text-center text-[40px] font-[700]">Contact Us </h2>
-            <p className="text-center mt-[10px] mb-[69px] text-[#717171] font-[500] ">
+            <p className="text-center mt-[10px] mb-[50px] text-[#717171] font-[500] ">
               Any question or remarks? Just write us a message!
             </p>
             <div className="max-w-[1169px] p-[20px] flex border-2 border-[#FFA500] rounded-[10px]">
@@ -67,33 +67,33 @@ const ContactUs = () => {
               </div>
               <div className="py-[60px] px-[50px] w-full">
                 <form onSubmit={handleSubmit}>
-                  <div className="flex gap-x-[39px] flex-wrap gap-y-[46px] items-center ">
+                  <div className="flex flex-wrap justify-between gap-y-[46px] items-center ">
                     <div className="min-w-[278px]">
                       <label
-                        className="text-[15px] text-[#000] mb-[18px] font-[500]"
+                        className="text-[15px] text-[#000] mb-[18px] ml-[3px] font-[500]"
                         htmlFor="firstName"
                       >
                         First Name
                       </label>
                       <input
-                        className="border-2 border-[#FFA500] font-[500] text-[15px] text-[#000]  block w-full p-[10px] outline-none rounded-lg"
+                        className="border border-[#ebedee] focus:border-[#FFA500] hover:border-[#FFA500] font-[500] text-[15px] placeholder:text-[13px] text-[#000] block w-full p-[10px] outline-none rounded-lg transition-all duration-200"
                         type="text"
                         id="firstName"
                         value={firstName}
                         onChange={(e) => setFirstName(e.target.value)}
-                        placeholder="Enter Yoyr First Name"
+                        placeholder="Enter Your First Name"
                         required
                       />
                     </div>
                     <div className="min-w-[278px]">
                       <label
-                        className="text-[15px] text-[#000] mb-[18px] font-[500]"
+                        className="text-[15px] text-[#000] mb-[18px] ml-[3px] font-[500]"
                         htmlFor="lastName"
                       >
                         Last Name
                       </label>
                       <input
-                        className="border-2 border-[#FFA500] font-[500] text-[15px] text-[#000]  block w-full p-[10px] outline-none rounded-lg"
+                        className="border border-[#ebedee] focus:border-[#FFA500] hover:border-[#FFA500] font-[500] text-[15px] placeholder:text-[13px] text-[#000] block w-full p-[10px] outline-none rounded-lg transition-all duration-200"
                         type="text"
                         id="lastName"
                         value={lastName}
@@ -104,13 +104,13 @@ const ContactUs = () => {
                     </div>
                     <div className="min-w-[278px]">
                       <label
-                        className="text-[15px] text-[#000] mb-[18px] font-[500]"
+                        className="text-[15px] text-[#000] mb-[18px] ml-[3px] font-[500]"
                         htmlFor="email"
                       >
                         Email
                       </label>
                       <input
-                        className="border-2 border-[#FFA500] font-[500] text-[15px] text-[#000]  block w-full p-[10px] outline-none rounded-lg"
+                        className="border border-[#ebedee] focus:border-[#FFA500] hover:border-[#FFA500] font-[500] text-[15px] placeholder:text-[13px] text-[#000] block w-full p-[10px] outline-none rounded-lg transition-all duration-200"
                         type="email"
                         id="email"
                         value={emailId}
@@ -121,13 +121,13 @@ const ContactUs = () => {
                     </div>
                     <div className="min-w-[278px]">
                       <label
-                        className="text-[15px] text-[#000] mb-[18px] font-[500]"
+                        className="text-[15px] text-[#000] mb-[18px] ml-[3px] font-[500]"
                         htmlFor="phone"
                       >
                         Phone Number
                       </label>
                       <input
-                        className="border-2 border-[#FFA500] font-[500] text-[15px] text-[#000]  block w-full p-[10px] outline-none rounded-lg"
+                        className="border border-[#ebedee] focus:border-[#FFA500] hover:border-[#FFA500] font-[500] text-[15px] placeholder:text-[13px] text-[#000] block w-full p-[10px] outline-none rounded-lg transition-all duration-200"
                         type="tel"
                         id="phone"
                         value={phoneNumber}
@@ -139,13 +139,13 @@ const ContactUs = () => {
                   </div>
                   <div className="mt-[50px]">
                     <label
-                      className="text-[15px] text-[#000] mb-[18px] font-[500]"
+                      className="text-[15px] text-[#000] mb-[18px] ml-[3px] font-[500]"
                       htmlFor="message"
                     >
                       Message
                     </label>
                     <input
-                      className="border-2 border-[#FFA500] font-[500] text-[15px] text-[#000]  block w-full p-[10px] outline-none rounded-lg"
+                      className="border border-[#ebedee] focus:border-[#FFA500] hover:border-[#FFA500] font-[500] text-[15px] placeholder:text-[13px] text-[#000] block w-full p-[10px] outline-none rounded-lg transition-all duration-200"
                       type="text"
                       id="message"
                       value={message}
